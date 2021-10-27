@@ -40,4 +40,9 @@ public class Humano {
     super.finalize();
     System.out.printf("%s murio!", this.nombre);
   }
+
+  @Override
+  public String toString() {
+    return "[" + this.getNombre() + "]";
+  }
 }
