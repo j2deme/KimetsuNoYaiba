@@ -17,7 +17,10 @@ public class Main {
         // Si el objeto "humano" sigue siendo Humano, tendrá
         // una probabilidad de convertirse en Cazador
         if(!(humano instanceof Demonio)){
-          System.out.println("Probabilidad de cazador.");
+          // Si se obtiene 5 o 6, upgrade a Cazador
+          if(trebol.lanzarDado() >= 5){
+            humano = new Cazador("Cazador " + (i + 1), humano.getEdad());
+          }
         }
 
         System.out.println(humano.getNombre());
