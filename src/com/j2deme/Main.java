@@ -1,5 +1,8 @@
 package com.j2deme;
 
+
+import java.util.Vector;
+
 public class Main {
 
     public static void main(String[] args) throws Throwable {
@@ -7,6 +10,7 @@ public class Main {
       Humano tanjiro = new Humano("Tanjiro", 15);
       nezuko.finalize(); //finalize() called explicitly*/
       Suerte trebol = new Suerte();
+      Vector<Humano> poblacion = new Vector<>();
 
       for (int i = 0; i < 10; i++){
         Humano humano = new Humano("Humano " + (i + 1), 19);
@@ -23,7 +27,12 @@ public class Main {
           }
         }
 
-        System.out.println(humano.getNombre());
+        poblacion.add(humano);
+      }
+
+      // foreach, para cada elemento en el vector o arreglo
+      for (Humano humano : poblacion) {
+        System.out.print(humano);
       }
     }
 }
