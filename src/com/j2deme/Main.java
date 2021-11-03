@@ -1,38 +1,35 @@
 package com.j2deme;
 
 
+import java.util.Scanner;
 import java.util.Vector;
 
 public class Main {
 
     public static void main(String[] args) throws Throwable {
-      /*Humano nezuko = new Humano("Nezuko", 14);
+      Humano nezuko = new Humano("Nezuko", 14);
       Humano tanjiro = new Humano("Tanjiro", 15);
-      nezuko.finalize(); //finalize() called explicitly*/
-      Suerte trebol = new Suerte();
-      Vector<Humano> poblacion = new Vector<>();
-
-      for (int i = 0; i < 10; i++){
-        Humano humano = new Humano("Humano " + (i + 1), 19);
-        if(trebol.lanzarMonedaBool()){
-          humano = new Demonio("Demonio "+ (i + 1), 19);
-        }
-
-        // Si el objeto "humano" sigue siendo Humano, tendrá
-        // una probabilidad de convertirse en Cazador
-        if(!(humano instanceof Demonio)){
-          // Si se obtiene 5 o 6, upgrade a Cazador
-          if(trebol.lanzarDado() >= 5){
-            humano = new Cazador("Cazador " + (i + 1), humano.getEdad());
-          }
-        }
-
-        poblacion.add(humano);
+      Humano player;
+      Scanner teclado = new Scanner(System.in);
+      System.out.println("Elige tu personaje:");
+      System.out.println("1) Tanjiro");
+      System.out.println("2) Nezuko");
+      System.out.print("Opción: ");
+      int op = 0;
+      op = teclado.nextInt();
+      if(op == 1){
+        player = tanjiro;
+      } else {
+        player = nezuko;
       }
 
-      // foreach, para cada elemento en el vector o arreglo
-      for (Humano humano : poblacion) {
-        System.out.print(humano);
+      System.out.println("Elegiste a " + player.getNombre());
+
+      Camino c1 = new Camino(10);
+      System.out.println(c1);
+
+      for (int i = 0; i < c1.size(); i++) {
+        // TODO: Crear función para leer la celda en la posición "i"
       }
     }
 }
