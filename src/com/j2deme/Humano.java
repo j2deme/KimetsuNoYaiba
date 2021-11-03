@@ -43,6 +43,6 @@ public class Humano {
 
   @Override
   public String toString() {
-    return "[" + this.getNombre() + "]";
+    return "[" + this.getClass().getSimpleName().substring(0, 1) + "]";
   }
 }
