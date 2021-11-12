@@ -52,6 +52,10 @@ public class Camino {
     return this.camino.size();
   }
 
+  public Celda getCelda(int i){
+    return this.camino.get(i);
+  }
+
   @Override
   public String toString() {
     String temp = "";
