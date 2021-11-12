@@ -5,12 +5,12 @@ import java.util.Vector;
 public class Camino {
   private Vector<Celda> camino;
   private Suerte trebol;
-  private int posicion;
+  private int posicionJugador;
 
   public Camino(int cantidadCeldas){
     this.camino = new Vector<>();
     this.trebol = new Suerte();
-    this.posicion = -1;
+    this.posicionJugador = -1;
     this.inicializar(cantidadCeldas);
   }
 
@@ -40,12 +40,13 @@ public class Camino {
     return celda;
   }
 
-  public int getPosicion() {
-    return posicion;
+  public int getPosicionJugador() {
+    return posicionJugador;
   }
 
-  public void setPosicion(int posicion) {
-    this.posicion = posicion;
+  public void setPosicionJugador(int posicion) {
+    this.posicionJugador = posicion;
+    this.camino.get(posicion).setVisitado(true);
   }
 
   public int size(){
